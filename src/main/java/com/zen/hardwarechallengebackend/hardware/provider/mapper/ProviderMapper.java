@@ -3,13 +3,15 @@ package com.zen.hardwarechallengebackend.hardware.provider.mapper;
 import com.zen.hardwarechallengebackend.hardware.provider.dto.ProviderDTO;
 import com.zen.hardwarechallengebackend.hardware.provider.entity.ProviderEntity;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ProviderMapper {
-    @Autowired
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
+
+    public ProviderMapper(ModelMapper modelMapper) {
+        this.modelMapper = modelMapper;
+    }
 
     public ProviderEntity toEntity(ProviderDTO dto) {
         return modelMapper.map(dto, ProviderEntity.class);
