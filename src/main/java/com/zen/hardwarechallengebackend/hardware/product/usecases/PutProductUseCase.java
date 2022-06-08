@@ -12,7 +12,7 @@ import javax.validation.Valid;
 
 @Service
 @Validated
-public class PostProductUseCase {
+public class PutProductUseCase {
     @Autowired
     private ProductRepository repository;
 
