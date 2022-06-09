@@ -1,7 +1,5 @@
 package com.zen.hardwarechallengebackend.hardware.receipt.routes;
 
-import com.zen.hardwarechallengebackend.hardware.product.dto.ProductDTO;
-import com.zen.hardwarechallengebackend.hardware.product.usecases.PostProductUseCase;
 import com.zen.hardwarechallengebackend.hardware.receipt.dto.ReceiptDTO;
 import com.zen.hardwarechallengebackend.hardware.receipt.usecases.PostReceiptUseCase;
 import org.springframework.context.annotation.Bean;
