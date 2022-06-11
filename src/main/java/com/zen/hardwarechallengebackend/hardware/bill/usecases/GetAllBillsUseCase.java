@@ -10,11 +10,14 @@ import reactor.core.publisher.Flux;
 @Service
 public class GetAllBillsUseCase {
 
-    @Autowired
-    private BillRepository repository;
+    private final BillRepository repository;
 
-    @Autowired
-    private BillMapper mapper;
+    private final BillMapper mapper;
+
+    public GetAllBillsUseCase(BillRepository repository, BillMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+    }
 
     public Flux<BillDTO> apply() {
         return repository.findAll().map(mapper::toDTO);
