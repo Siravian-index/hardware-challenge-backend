@@ -29,7 +29,7 @@ class GetAllProductsUseCaseTest {
     }
 
     @Test
-    void shouldGetAllProviders() {
+    void shouldGetAllProducts() {
         ProviderEntity provider1 = new ProviderEntity();
         provider1.setId("1");
         provider1.setName("david");
