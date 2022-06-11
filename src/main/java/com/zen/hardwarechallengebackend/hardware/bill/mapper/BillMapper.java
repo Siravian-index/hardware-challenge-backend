@@ -1,7 +1,6 @@
 package com.zen.hardwarechallengebackend.hardware.bill.mapper;
 
-import com.zen.hardwarechallengebackend.hardware.bill.dto.BillDTO;
-import com.zen.hardwarechallengebackend.hardware.bill.entity.BillEntity;
+import com.zen.hardwarechallengebackend.hardware.bill.entity.BillDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,11 +11,11 @@ public class BillMapper {
     private ModelMapper modelMapper;
 
 
-    public BillEntity toEntity(BillDTO dto) {
-        return modelMapper.map(dto, BillEntity.class);
+    public BillDTO toEntity(com.zen.hardwarechallengebackend.hardware.bill.dto.BillDTO dto) {
+        return modelMapper.map(dto, BillDTO.class);
     }
 
-    public BillDTO toDTO(BillEntity entity) {
-        return modelMapper.map(entity, BillDTO.class);
+    public com.zen.hardwarechallengebackend.hardware.bill.dto.BillDTO toDTO(BillDTO entity) {
+        return modelMapper.map(entity, com.zen.hardwarechallengebackend.hardware.bill.dto.BillDTO.class);
     }
 }

@@ -1,16 +1,9 @@
 package com.zen.hardwarechallengebackend.hardware.bill.usecases;
 
-import com.zen.hardwarechallengebackend.hardware.bill.dto.BillDTO;
-import com.zen.hardwarechallengebackend.hardware.bill.entity.BillEntity;
+import com.zen.hardwarechallengebackend.hardware.bill.entity.BillDTO;
 import com.zen.hardwarechallengebackend.hardware.bill.entity.ProductSold;
 import com.zen.hardwarechallengebackend.hardware.bill.mapper.BillMapper;
 import com.zen.hardwarechallengebackend.hardware.bill.repository.BillRepository;
-import com.zen.hardwarechallengebackend.hardware.product.dto.ProductDTO;
-import com.zen.hardwarechallengebackend.hardware.product.entity.ProductEntity;
-import com.zen.hardwarechallengebackend.hardware.product.mapper.ProductMapper;
-import com.zen.hardwarechallengebackend.hardware.product.repository.ProductRepository;
-import com.zen.hardwarechallengebackend.hardware.product.usecases.GetAllProductsUseCase;
-import com.zen.hardwarechallengebackend.hardware.provider.entity.ProviderEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -22,8 +15,6 @@ import reactor.test.StepVerifier;
 
 import java.time.LocalDate;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 
@@ -53,7 +44,7 @@ class GetAllBillsUseCaseTest {
         productSold2.setName("table");
         productSold2.setAmount(4);
 
-        BillEntity billEntity = new BillEntity();
+        BillDTO billEntity = new BillDTO();
         billEntity.setId("testID");
         billEntity.setDate(LocalDate.now());
         billEntity.setCustomer("Mario");
@@ -62,7 +53,7 @@ class GetAllBillsUseCaseTest {
         billEntity.setTotal(1000);
 
         Mockito.when(repository.findAll()).thenReturn(Flux.just(billEntity));
-        Flux<BillDTO> billDTOFlux = useCase.apply();
+        Flux<com.zen.hardwarechallengebackend.hardware.bill.dto.BillDTO> billDTOFlux = useCase.apply();
 
         StepVerifier.create(billDTOFlux)
                 .expectNextCount(1)

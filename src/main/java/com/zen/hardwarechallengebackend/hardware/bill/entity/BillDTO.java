@@ -9,7 +9,7 @@ import java.util.List;
 
 @Data
 @Document
-public class BillEntity {
+public class BillDTO {
     @Id
     private String id;
     private LocalDate date;
