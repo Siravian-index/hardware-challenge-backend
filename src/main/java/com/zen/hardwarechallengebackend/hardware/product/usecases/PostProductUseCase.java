@@ -13,11 +13,14 @@ import javax.validation.Valid;
 @Service
 @Validated
 public class PostProductUseCase {
-    @Autowired
-    private ProductRepository repository;
+    private final ProductRepository repository;
 
-    @Autowired
-    private ProductMapper mapper;
+    private final ProductMapper mapper;
+
+    public PostProductUseCase(ProductRepository repository, ProductMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+    }
 
     public Mono<ProductDTO> apply(@Valid ProductDTO dto) {
         return repository.save(mapper.toEntity(dto)).map(mapper::toDTO);
