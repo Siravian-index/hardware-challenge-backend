@@ -17,20 +17,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class GetAllProvidersUseCaseTest {
-
-
     private GetAllProvidersUseCase useCase;
     @Autowired
     private ProviderMapper mapper;
     @Mock
     ProviderRepository repository;
 
-
     @BeforeEach
     void setUp() {
         useCase = new GetAllProvidersUseCase(repository, mapper);
     }
-
 
     @Test
     void shouldGetAllProviders() {
