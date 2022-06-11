@@ -1,6 +1,6 @@
 package com.zen.hardwarechallengebackend.hardware.bill.usecases;
 
-import com.zen.hardwarechallengebackend.hardware.bill.entity.BillDTO;
+import com.zen.hardwarechallengebackend.hardware.bill.entity.BillEntity;
 import com.zen.hardwarechallengebackend.hardware.bill.entity.ProductSold;
 import com.zen.hardwarechallengebackend.hardware.bill.mapper.BillMapper;
 import com.zen.hardwarechallengebackend.hardware.bill.repository.BillRepository;
@@ -44,7 +44,7 @@ class GetAllBillsUseCaseTest {
         productSold2.setName("table");
         productSold2.setAmount(4);
 
-        BillDTO billEntity = new BillDTO();
+        BillEntity billEntity = new BillEntity();
         billEntity.setId("testID");
         billEntity.setDate(LocalDate.now());
         billEntity.setCustomer("Mario");

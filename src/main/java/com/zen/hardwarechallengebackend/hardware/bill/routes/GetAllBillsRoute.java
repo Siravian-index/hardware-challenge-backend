@@ -1,6 +1,7 @@
 package com.zen.hardwarechallengebackend.hardware.bill.routes;
 
-import com.zen.hardwarechallengebackend.hardware.bill.entity.BillDTO;
+import com.zen.hardwarechallengebackend.hardware.bill.dto.BillDTO;
+import com.zen.hardwarechallengebackend.hardware.bill.entity.BillEntity;
 import com.zen.hardwarechallengebackend.hardware.bill.usecases.GetAllBillsUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -34,7 +35,7 @@ public class GetAllBillsRoute {
         return route(GET("/v1/api/bill"),
                 request -> ServerResponse.status(HttpStatus.OK)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .body(BodyInserters.fromProducer(useCase.apply(), com.zen.hardwarechallengebackend.hardware.bill.dto.BillDTO.class))
+                        .body(BodyInserters.fromProducer(useCase.apply(), BillDTO.class))
         );
 
     }
