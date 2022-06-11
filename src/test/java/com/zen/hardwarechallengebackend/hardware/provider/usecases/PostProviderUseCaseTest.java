@@ -20,9 +20,6 @@ class PostProviderUseCaseTest {
     @MockBean
     PostProviderUseCase useCase;
 
-    @Mock
-    ProviderRepository repository;
-
 
     @Test
     void shouldSaveProvider() {
