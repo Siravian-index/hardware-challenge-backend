@@ -1,7 +1,5 @@
 package com.zen.hardwarechallengebackend.hardware.receipt.routes;
 
-import com.zen.hardwarechallengebackend.hardware.bill.entity.BillEntity;
-import com.zen.hardwarechallengebackend.hardware.bill.usecases.GetAllBillsUseCase;
 import com.zen.hardwarechallengebackend.hardware.provider.dto.ProviderDTO;
 import com.zen.hardwarechallengebackend.hardware.receipt.entity.ReceiptEntity;
 import com.zen.hardwarechallengebackend.hardware.receipt.usecases.GetAllReceiptUseCase;

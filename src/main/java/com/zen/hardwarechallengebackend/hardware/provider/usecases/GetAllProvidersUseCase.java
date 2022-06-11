@@ -10,11 +10,14 @@ import reactor.core.publisher.Flux;
 @Service
 public class GetAllProvidersUseCase {
 
-    @Autowired
-    private ProviderRepository repository;
+    private final ProviderRepository repository;
 
-    @Autowired
-    private ProviderMapper mapper;
+    private final ProviderMapper mapper;
+
+    public GetAllProvidersUseCase(ProviderRepository repository, ProviderMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+    }
 
     public Flux<ProviderDTO> apply() {
         return repository.findAll().map(mapper::toDTO);

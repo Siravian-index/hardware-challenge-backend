@@ -3,9 +3,6 @@ package com.zen.hardwarechallengebackend.hardware.bill.routes;
 import com.zen.hardwarechallengebackend.hardware.bill.dto.BillDTO;
 import com.zen.hardwarechallengebackend.hardware.bill.entity.BillEntity;
 import com.zen.hardwarechallengebackend.hardware.bill.usecases.GetAllBillsUseCase;
-import com.zen.hardwarechallengebackend.hardware.product.entity.ProductEntity;
-import com.zen.hardwarechallengebackend.hardware.product.usecases.GetAllProductsUseCase;
-import com.zen.hardwarechallengebackend.hardware.provider.dto.ProviderDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -32,7 +29,7 @@ public class GetAllBillsRoute {
             beanClass = GetAllBillsUseCase.class, method = RequestMethod.GET, beanMethod = "apply",
             operation = @Operation(operationId = "getBills", responses = {
                     @ApiResponse(responseCode = "200", description = "successful operation",
-                            content = @Content(schema = @Schema(implementation = BillEntity.class)))}
+                            content = @Content(schema = @Schema(implementation = BillDTO.class)))}
             ))
     public RouterFunction<ServerResponse> allBills(GetAllBillsUseCase useCase) {
         return route(GET("/v1/api/bill"),
